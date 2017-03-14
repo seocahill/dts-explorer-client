@@ -2,5 +2,10 @@
 <ul>
   {{#each rootNodes as |node|}}
     <li>{{node.element.name}}</li>
+    <ul>
+      {{#each node.children as |child|}} 
+        <li>{{child.element.name}}</li>
+      {{/each}}
+    </ul>
   {{/each}}
 </ul>
