@@ -10,8 +10,11 @@ Router.map(function() {
   this.route('discoverable-taxonomy-sets');
   this.route('discoverable-taxonomy-set', {
     path: 'discoverable-taxonomy-sets/:dts_id'
+  }, function() {
+    this.route('role-type', {
+      path: 'role-types/:role_type_id'
+    });
   });
-  this.route('role-type');
 });
 
 export default Router;

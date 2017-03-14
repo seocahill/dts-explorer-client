@@ -10,6 +10,6 @@ export default function(server) {
     const dfs = server.create('discoverable-taxonomy-set', { name: dfsName });
     roleTypes.forEach((roleType) => {
       server.create('role-type', { definition: roleType, discoverableTaxonomySet: dfs });
-    })
-  })
+    });
+  });
 }
