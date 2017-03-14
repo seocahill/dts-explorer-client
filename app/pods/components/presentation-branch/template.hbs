@@ -1,6 +1,8 @@
-{{node.element.name}}
-<ul>
-  {{#each node.children as |child|}}
-    {{presentation-branch node=child}}
-  {{/each}}
-</ul>
+<a href="#" {{action "toggleShowChildren"}}>{{node.element.name}}</a>
+{{#if showChildren}}
+  <ul>
+    {{#each node.children as |child|}} 
+      {{presentation-branch node=child}} 
+    {{/each}}
+  </ul>
+{{/if}}
