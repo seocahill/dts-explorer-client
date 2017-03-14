@@ -1,0 +1,6 @@
+{{node.element.name}}
+<ul>
+  {{#each node.children as |child|}}
+    {{presentation-branch node=child}}
+  {{/each}}
+</ul>
