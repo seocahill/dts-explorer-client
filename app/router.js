@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('discoverable-taxonomy-sets');
   this.route('discoverable-taxonomy-set', {
-    path: 'discoverable-taxonomy-sets/:id'
+    path: 'discoverable-taxonomy-sets/:dts_id'
   });
 });
 
