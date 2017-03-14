@@ -1,6 +1,6 @@
 <h2>{{model.name}} Role types</h2>
 <ul>
   {{#each model.roleTypes as |roleType|}}
-  <li>{{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType}}</li>
+  <li>{{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id}}</li>
   {{/each}}
 </ul>

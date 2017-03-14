@@ -29,4 +29,7 @@ export default function() {
 
   this.get('/role-types');
   this.get('/role-types/:id');
+
+  this.get('/presentation-nodes');
+  this.get('/presentation-nodes/:id');
 }
