@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('discoverable-taxonomy-sets');
+  this.route('discoverable-taxonomy-set');
 });
 
 export default Router;
