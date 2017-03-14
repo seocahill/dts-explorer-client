@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('discoverable-taxonomy-set', {
     path: 'discoverable-taxonomy-sets/:dts_id'
   });
+  this.route('role-type');
 });
 
 export default Router;

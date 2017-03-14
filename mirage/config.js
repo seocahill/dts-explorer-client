@@ -26,4 +26,7 @@ export default function() {
 
   this.get('/discoverable-taxonomy-sets');
   this.get('/discoverable-taxonomy-sets/:id');
+
+  this.get('/role-types');
+  this.get('/role-types/:id');
 }
