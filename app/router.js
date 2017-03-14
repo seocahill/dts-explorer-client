@@ -13,6 +13,10 @@ Router.map(function() {
   }, function() {
     this.route('role-type', {
       path: 'role-types/:role_type_id'
+    }, function() {
+      this.route('element', {
+        path: 'element/:element_id'
+      })
     });
   });
 });

@@ -1,6 +1,15 @@
-<h3>{{model.definition}}</h3>
-<ul>
-  {{#each rootNodes as |node|}}
-    {{presentation-branch node=node}}
-  {{/each}}
-</ul>
+<div class="container">
+  <header>
+    <h3>{{model.definition}}</h3>
+  </header>
+  <nav>
+    <ul>
+      {{#each rootNodes as |node|}} 
+        {{presentation-branch node=node viewElement=(action 'viewElement')}} 
+      {{/each}}
+    </ul>
+  </nav>
+  <article>
+    {{outlet}}
+  </article>
+</div>

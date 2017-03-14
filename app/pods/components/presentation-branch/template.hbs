@@ -2,7 +2,7 @@
 {{#if showChildren}}
   <ul>
     {{#each node.children as |child|}} 
-      {{presentation-branch node=child}} 
+      {{presentation-branch node=child viewElement=attrs.viewElement}} 
     {{/each}}
   </ul>
 {{/if}}

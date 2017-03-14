@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.container > header {
+  margin: 4px;
+  padding: 5px;
+  flex: 4 0 100%;
+  order: 1
+}
+
+.container > nav {
+  margin: 4px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 7pt;
+  flex: 1 0 0;
+  order: 2;
+}
+
+.container > article {
+  margin: 4px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 7pt;
+  flex: 3 0 0;
+  order: 3;
+}
+

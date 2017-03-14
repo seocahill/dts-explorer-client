@@ -6,6 +6,8 @@ export default Ember.Component.extend({
 
   actions: {
     toggleShowChildren() {
+      const element = this.get('node.element');
+      this.attrs.viewElement(element);
       this.toggleProperty('showChildren');
     }
   }
