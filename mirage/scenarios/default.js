@@ -5,5 +5,6 @@ export default function(server) {
     server.create('discoverable-taxonomy-set', { name: dfsName });
   });
   server.loadFixtures('roleTypes');
+  server.loadFixtures('elements');
   server.loadFixtures('presentationNodes');
 }

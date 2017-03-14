@@ -32,4 +32,7 @@ export default function() {
 
   this.get('/presentation-nodes');
   this.get('/presentation-nodes/:id');
+
+  this.get('/elements');
+  this.get('/elements/:id');
 }

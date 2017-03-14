@@ -1,6 +1,6 @@
 <h3>{{model.definition}}</h3>
 <ul>
-  {{#each model.presentationNodes as |node|}}
-    <li>{{node.elementId}}</li>
+  {{#each rootNodes as |node|}}
+    <li>{{node.element.name}}</li>
   {{/each}}
 </ul>
