@@ -2615,6 +2615,32 @@ export default [
       "substitutionGroup": "xbrli:item",
       "periodType": "duration",
       "nillable": "true"
-    }
+    },
+    {
+      "id": "uk-gaap_GroupCompanyDimension"
+    },
+    { "id": "uk-gaap_Consolidated"},
+    { "id": "uk-gaap_CompanyDefault"},
+    { "id": "uk-gaap_GroupShareJoint-venturesExcludingAssociatesTurnoverOnly"},
+    { "id": "uk-gaap_ShareJoint-venturesAssociates"},
+    { "id": "uk-gaap_ShareJoint-ventures"},
+    { "id": "uk-gaap_GroupAfterAssociatesBeforeJoint-ventures"},
+    { "id": "uk-gaap_ShareAssociates"},
+    { "id": "uk-gaap_GroupBeforeAssociatesJoint-ventures"},
+    { "id": "uk-gaap_RestatementsDimension"},
+    { "id": "uk-gaap_RestatedAmount"},
+    { "id": "uk-gaap_PriorPeriodIncreaseDecrease"},
+    { "id": "uk-gaap_OriginalAmountDefault"},
+    {"id": "uk-lang_English"},
+    {"id": "uk-lang_LanguagesDimension"},
+    {"id": "uk-lang_DimensionMembersRepresentingLanguagesHeading"},
+    {"id": "uk-lang_AllLanguages"},
+    {"id": "uk-lang_LanguageListHeading"},
+    {"id": "uk-countries_CountriesDimension"},
+    {"id": "uk-countries_DimensionMembersRepresentingCountriesRegionsHeading"},
+    {"id": "uk-countries_AllCountries"},
+    {"id": "uk-countries_HomeCountriesHeading"},
+    {"id": "uk-countries_MainRegionsHeading"},
+    {"id": "uk-countries_CountryListHeading"},
 ];
  

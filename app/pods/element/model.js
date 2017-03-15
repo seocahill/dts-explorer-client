@@ -1,8 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  prsentationNodes: DS.hasMany('presentation-node'),
-  
+  presentationNodes: DS.hasMany('presentation-node'),
+  dimensionNodes: DS.hasMany('dimension-node'),
+
   name: DS.attr('string'),
   type: DS.attr('string'),
   substitutionGroup: DS.attr('string'),

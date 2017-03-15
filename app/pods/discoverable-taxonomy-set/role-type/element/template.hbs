@@ -5,4 +5,23 @@
 {{/each-in}}
 </ul>
 <hr>
-<h4>Element Dimensions</h4>
+<div class="container">
+  <header>
+    <h3>Dimensions</h3>
+  </header>
+  <nav>
+    <ul>
+      {{#each rootDimensionNodes as |node|}}
+        {{presentation-branch node=node viewElement=(action 'viewDimensionElement')}} 
+      {{/each}}
+    </ul>
+  </nav>
+  <article>
+    <h5>Dimension element properties</h5>
+    <ul>
+      {{#each-in dimensionElement._internalModel._data as |key value|}}
+        <li>{{key}} {{value}}</li>
+      {{/each-in}}
+    </ul>
+  </article>
+</div>

@@ -33,6 +33,9 @@ export default function() {
   this.get('/presentation-nodes');
   this.get('/presentation-nodes/:id');
 
+  this.get('/dimension-nodes');
+  this.get('/dimension-nodes/:id');
+
   this.get('/elements');
   this.get('/elements/:id');
 }

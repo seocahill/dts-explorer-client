@@ -7,4 +7,5 @@ export default function(server) {
   server.loadFixtures('roleTypes');
   server.loadFixtures('elements');
   server.loadFixtures('presentationNodes');
+  server.loadFixtures('dimensionNodes');
 }
