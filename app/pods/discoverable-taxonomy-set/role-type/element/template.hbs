@@ -12,7 +12,7 @@
   <nav>
     <ul>
       {{#each rootDimensionNodes as |node|}}
-        {{presentation-branch node=node viewElement=(action 'viewDimensionElement')}} 
+        {{tree-branch node=node viewElement=(action 'viewDimensionElement')}} 
       {{/each}}
     </ul>
   </nav>
