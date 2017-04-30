@@ -21,6 +21,7 @@ Router.map(function() {
         this.route('element', {
           path: 'element/:element_id'
         });
+        this.route('dimensions');
       });
     });
   });

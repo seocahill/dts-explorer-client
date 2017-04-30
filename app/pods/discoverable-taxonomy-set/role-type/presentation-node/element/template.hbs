@@ -1,27 +1,6 @@
 <h4>Properties {{link-to 'close' 'discoverable-taxonomy-set.role-type.presentation-node'}}</h4>
 <ul>
-{{#each-in model._internalModel._data as |key value|}}
+{{#each-in model.data as |key value|}}
   <li>{{key}} {{value}}</li>
 {{/each-in}}
 </ul>
-<hr>
-<div class="container">
-  <header>
-    <h3>Dimensions</h3>
-  </header>
-  <nav>
-    <ul>
-      {{#each rootDimensionNodes as |node|}}
-        {{tree-branch node=node viewElement=(action 'viewDimensionElement')}} 
-      {{/each}}
-    </ul>
-  </nav>
-  <article>
-    <h5>Dimension element properties</h5>
-    <ul>
-      {{#each-in dimensionElement._internalModel._data as |key value|}}
-        <li>{{key}} {{value}}</li>
-      {{/each-in}}
-    </ul>
-  </article>
-</div>
