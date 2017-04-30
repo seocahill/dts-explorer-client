@@ -1,6 +1,2 @@
-{{link-to model.parent.element.name 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
-<nav>
-  {{#each model.children as |child|}} 
-    {{link-to child.element.name 'discoverable-taxonomy-set.role-type.presentation-node' child}}<br>
-  {{/each}}
-</nav>
+{{link-to model.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element}} | {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
+{{outlet}}
