@@ -1,7 +1,9 @@
 <h4>Dimensions {{link-to 'close' 'discoverable-taxonomy-set.role-type.presentation-node'}}</h4>
 <nav>
   <ul>
-    {{#each rootDimensionNodes as |node|}} {{tree-branch node=node viewElement=(action 'viewDimensionElement')}} {{/each}}
+    {{#each rootNodes as |node|}}
+      {{tree-branch node=node viewElement=(action (mut dimensionElement))}}
+    {{/each}}
   </ul>
 </nav>
 <article>
