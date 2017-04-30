@@ -1,15 +1,6 @@
 <div class="container">
   <header>
-    <h3>{{model.definition}}</h3>
+    <h3>{{link-to model.definition 'discoverable-taxonomy-set.role-type'}}</h3>
   </header>
-  <nav>
-    <ul>
-      {{#each rootNodes as |node|}} 
-        {{tree-branch node=node viewElement=(action 'viewElement')}} 
-      {{/each}}
-    </ul>
-  </nav>
-  <article>
-    {{outlet}}
-  </article>
+  {{outlet}}
 </div>
