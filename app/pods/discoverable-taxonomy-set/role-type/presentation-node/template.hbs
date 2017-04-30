@@ -1,2 +1,7 @@
-{{link-to model.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element}} | {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
+{{link-to model.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element}} | 
+{{#if model.parent}}
+  {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
+{{else}}
+  {{link-to "parent" 'discoverable-taxonomy-set.role-type'}}
+{{/if}}
 {{outlet}}
