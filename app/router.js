@@ -18,6 +18,9 @@ Router.map(function() {
         path: 'element/:element_id'
       });
       this.route('presentation-nodes');
+      this.route('presentation-node', {
+        path: 'presentation-nodes/:presentation_node_id'
+      });
     });
   });
 });

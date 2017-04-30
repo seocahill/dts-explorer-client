@@ -1,5 +1,5 @@
 <nav>
   {{#each rootNodes as |node|}}
-    {{node.element.name}}
+    {{link-to node.element.name 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}
   {{/each}}
 </nav>

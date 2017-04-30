@@ -3,8 +3,8 @@ import Ember from 'ember';
 const { isBlank } = Ember;
 
 export default Ember.Route.extend({
-  model(params) {
-    return this.store.findAll('presentation-node');
+  model() {
+    return this.modelFor('discoverable-taxonomy-set.role-type').get('presentationNodes');
   },
 
   setupController(controller, model) {
