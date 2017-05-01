@@ -22,6 +22,9 @@ Router.map(function() {
           path: 'element/:element_id'
         });
         this.route('dimensions');
+        this.route('dimension-node', {
+          path: 'dimensions/:dimension_node_id'
+        }, function() {});
       });
     });
   });
