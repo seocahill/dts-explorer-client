@@ -5,5 +5,9 @@ export default Ember.Route.extend({
     return this.store.findRecord('role-type', params.role_type_id, {
       include: 'presentationNodes.element,dimensionNodes'
     })
+  },
+
+  afterModel(model) {
+    this.controllerFor('application').set('searchScope', model);
   }
 });

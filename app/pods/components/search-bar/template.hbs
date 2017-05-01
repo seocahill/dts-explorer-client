@@ -1,0 +1,6 @@
+<form action="">
+  {{input value=query type="search" placeholder="search taxonomy"}}
+</form>
+{{#each results as |result|}}
+  {{result.name}}<br>
+{{/each}}
