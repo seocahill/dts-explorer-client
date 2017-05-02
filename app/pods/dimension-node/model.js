@@ -14,7 +14,14 @@ export default DS.Model.extend({
   }),
 
   defaultDimension: Ember.computed(function() {
-    return this._defaultDimension() ? "has default" : "choice required";
+    const arcrole = this.get('shortArcrole');
+    if (arcrole === 'all') {
+      return this.get('children').every((child) => child._defaultDimension());
+    } else if (arcrole === 'hypercube-dimension') {
+      return this._defaultDimension();
+    } else {
+      return arcrole
+    }
   }),
 
   _defaultDimension() {
