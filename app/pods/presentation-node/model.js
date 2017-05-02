@@ -8,5 +8,15 @@ export default DS.Model.extend({
   roleType: DS.belongsTo('role-type'),
   order: DS.attr('number'),
 
-  name: Ember.computed.alias('element.name')
+  name: Ember.computed.alias('element.name'),
+
+  descendents() {
+    return this.get('children').reduce((previous, current) => {
+      previous.addObject(current);
+      if (current.get('children')) {
+        previous.addObjects(current.descendents());
+      }
+      return previous;
+    }, []);
+  }
 });
