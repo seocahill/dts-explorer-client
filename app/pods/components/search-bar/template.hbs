@@ -2,5 +2,5 @@
   {{input value=query type="search" placeholder="search taxonomy"}}
 </form>
 {{#each results as |result|}}
-  {{result.name}}<br>
+  {{link-to result.name searchPath result}}<br>
 {{/each}}

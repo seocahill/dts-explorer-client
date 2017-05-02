@@ -5,9 +5,5 @@ export default Ember.Route.extend({
     return this.store.findRecord('discoverable-taxonomy-set', params.dts_id, {
       include: 'roleTypes'
     });
-  },
-
-  afterModel(model) {
-    this.controllerFor('application').set('searchScope', model.get('roleTypes'));
-  } 
+  }
 });

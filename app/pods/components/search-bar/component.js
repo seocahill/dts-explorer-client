@@ -6,7 +6,19 @@ export default Ember.Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
     this.set('query', null);
+    const modelName = this.get('searchScope.firstObject._internalModel.modelName');
   },
+
+  searchPath: Ember.computed('searchScope.[]', function() {
+    const modelName = this.get('searchScope.firstObject._internalModel.modelName');
+    if (modelName === 'role-type') {
+      return 'discoverable-taxonomy-set.role-type'
+    } else if (modelName === 'presentation-node') {
+      return 'discoverable-taxonomy-set.role-type.presentation-node'
+    } else {
+      return 'discoverable-taxonomy-set'
+    }
+  }),
 
   results: Ember.computed('query', function() {
     const query = this.get('query')
