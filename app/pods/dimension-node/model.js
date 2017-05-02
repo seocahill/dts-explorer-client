@@ -10,6 +10,17 @@ export default DS.Model.extend({
   arcrole: DS.attr('string'),
 
   shortArcrole: Ember.computed('arcrole', function() {
-    return this.get('arcrole').split('/').get('lastObject')
-  })
+    return this.get('arcrole').split('/').get('lastObject');
+  }),
+
+  defaultDimension: Ember.computed(function() {
+    return this._defaultDimension() ? "has default" : "choice required";
+  }),
+
+  _defaultDimension() {
+    if (this.get('shortArcrole') === "dimension-default") {
+      return true;
+    }
+    return this.get('children').any((child) => child._defaultDimension());
+  }
 });
