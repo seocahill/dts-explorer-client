@@ -1,11 +1,12 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:index', 'Unit | Route | index', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:application']
 });
 
-test('it exists', function(assert) {
+test('it sets the search scope', function(assert) {
+  let mock = { name: "test" };
   let route = this.subject();
-  assert.ok(route);
+  route.afterModel(mock);
+  assert.equal(route.controllerFor('application').get('searchScope'), mock);
 });
