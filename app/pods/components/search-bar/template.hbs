@@ -1,6 +1,6 @@
 <form>
-  {{input value=query type="search" placeholder="search taxonomy"}}
+  {{input value=query type="search" key-up=(action 'filterModel') placeholder="search taxonomy"}}
 </form>
 {{#each results as |result|}}
-  {{link-to result.name searchPath result}}<br>
+  {{link-to result.name 'discoverable-taxonomy-set' result}}<br>
 {{/each}}

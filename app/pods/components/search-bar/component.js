@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   query: null,
+  results: [],
 
   didReceiveAttrs() {
     this._super(...arguments);
@@ -9,7 +10,7 @@ export default Ember.Component.extend({
   },
 
   searchPath: Ember.computed('searchScope.[]', function() {
-    const modelName = this.get('searchScope.firstObject._internalModel.modelName');
+    const modelName = this.get('searchScope.firstObject.constructor.modelName');
     if (modelName === 'role-type') {
       return 'discoverable-taxonomy-set.role-type'
     } else if (modelName === 'presentation-node') {
@@ -19,13 +20,20 @@ export default Ember.Component.extend({
     }
   }),
 
-  results: Ember.computed('query', function() {
-    const query = this.get('query')
+  _filterModel() {
+    const query = this.get('query');
     if (Ember.isBlank(query)) {
-      return [];
+      return;
     }
-    return this.get('searchScope').filter((item) => {
+    const results = this.get('searchScope').filter((item) => {
       return item.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
     });
-  })
+    this.set('results', results);
+  },
+
+  actions: {
+    filterModel() {
+      Ember.run.debounce(this, this._filterModel, 500)
+    }
+  }
 });
