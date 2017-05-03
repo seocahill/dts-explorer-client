@@ -28,6 +28,9 @@ export default DS.Model.extend({
     if (this.get('shortArcrole') === "dimension-default") {
       return true;
     }
-    return this.get('children').any((child) => child._defaultDimension());
+    if (Ember.isPresent(this.get('children'))) {
+      return this.get('children').any((child) => child._defaultDimension());
+    }
+    return false;
   }
 });
