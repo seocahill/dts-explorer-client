@@ -1,5 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import wait from 'ember-test-helpers/wait';
+import Ember from 'ember';
 
 moduleForComponent('search-bar', 'Integration | Component | search bar', {
   integration: true
@@ -7,19 +9,14 @@ moduleForComponent('search-bar', 'Integration | Component | search bar', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  const model = Ember.Object.create({name: "test"})
+  this.set('searchScope', [model])
 
-  this.render(hbs`{{search-bar}}`);
+  this.render(hbs`{{search-bar searchScope=searchScope}}`);
+  this.$('input').val('test');
+  this.$('input').trigger('keyup');
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#search-bar}}
-      template block text
-    {{/search-bar}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  return wait().then(() => {
+    assert.equal(this.$('input').text().trim(), '');
+  });
 });

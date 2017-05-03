@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
     this.set('query', null);
-    const modelName = this.get('searchScope.firstObject._internalModel.modelName');
   },
 
   searchPath: Ember.computed('searchScope.[]', function() {
