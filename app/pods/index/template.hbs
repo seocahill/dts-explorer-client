@@ -1,5 +1,5 @@
 <h2>Discoverable Taxonomy Sets</h2>
-<ul>
+<ul data-test-dts-menu>
   {{#each model as |dts|}}
     <li>{{link-to dts.name 'discoverable-taxonomy-set' dts.id}}</li>
   {{/each}}

@@ -1,5 +1,5 @@
 <h4>Child nodes</h4>
-<nav>
+<nav data-test-child-nodes-nav>
   {{#each model.children as |child|}} 
     {{link-to child.element.name 'discoverable-taxonomy-set.role-type.presentation-node' child}}<br>
   {{/each}}
