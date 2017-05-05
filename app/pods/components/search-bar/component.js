@@ -34,6 +34,11 @@ export default Ember.Component.extend({
   actions: {
     filterModel() {
       Ember.run.debounce(this, this._filterModel, 500)
+    },
+
+    handleClick(model) {
+      this.get('navigateToResult')(this.get('searchPath'), model);
+      this.setProperties({results: [], query: null});
     }
   }
 });

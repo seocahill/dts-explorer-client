@@ -2,7 +2,7 @@
   <h1>{{link-to "XBRL DTS Explorer" 'application'}}</h1>
 </header>
 
-{{search-bar searchScope=searchScope}}
+{{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
 
 <main>
   {{outlet}}
