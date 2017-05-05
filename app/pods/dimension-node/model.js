@@ -9,6 +9,12 @@ export default DS.Model.extend({
   order: DS.attr('number'),
   arcrole: DS.attr('string'),
 
+  name: Ember.computed.alias('element.name'),
+
+  dimensionType: Ember.computed('defaultDimension', function() {
+    return this.get('defaultDimension') ?  " (has default)" : " (choice required)";
+  }),
+
   shortArcrole: Ember.computed('arcrole', function() {
     return this.get('arcrole').split('/').get('lastObject');
   }),
@@ -20,7 +26,7 @@ export default DS.Model.extend({
     } else if (arcrole === 'hypercube-dimension') {
       return this._defaultDimension();
     } else {
-      return arcrole
+      return false;
     }
   }),
 

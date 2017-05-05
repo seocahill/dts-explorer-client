@@ -64,7 +64,18 @@ test('defaultDimension false', function (assert) {
   assert.equal(parent.get('defaultDimension'), false, "should be false as all children are not default dimensions")
 });
 
-test('defaultDimension returns short arcrole', function (assert) {
+test('defaultDimension returns false when tree level is above hypercube', function (assert) {
   const parent = this.subject({ arcrole: "hypercube" });
-  assert.equal(parent.get('defaultDimension'), 'hypercube', "shoud return short arcrole")
+  assert.equal(parent.get('defaultDimension'), false, "shoud return short arcrole")
+});
+
+test('dimensionType returns information to the user regarding necessity for choosing custom dimension', function (assert) {
+  assert.expect(2);
+
+  let node = this.subject();
+  Ember.run(() => node.set('defaultDimension', false));
+  assert.equal(node.get('dimensionType'), " (choice required)");
+
+  Ember.run(() => node.set('defaultDimension', true));
+  assert.equal(node.get('dimensionType'), " (has default)");
 });

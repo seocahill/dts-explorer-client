@@ -1,6 +1,6 @@
 <h4>Dimension Properties {{link-to 'close' 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node'}}</h4>
 <ul>
 {{#each-in model.data as |key value|}}
-  <li>{{key}} {{value}}</li>
+  <li data-test-element="{{key}}">{{key}} {{value}}</li>
 {{/each-in}}
 </ul>

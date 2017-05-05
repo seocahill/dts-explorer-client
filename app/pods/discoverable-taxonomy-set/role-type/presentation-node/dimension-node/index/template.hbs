@@ -1,6 +1,6 @@
 <h4>Child nodes</h4>
-<nav>
+<nav data-test-dimension-nodes>
   {{#each model.children as |child|}} 
-    {{link-to child.element.name 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' child}} ({{if child.defaultDimension "has default" "choice required"}})<br>
+    {{link-to (concat child.name child.dimensionType) 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' child}} <br>
   {{/each}}
 </nav>
