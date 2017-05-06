@@ -14,7 +14,6 @@ test('search element with dimensions and drill down', function(assert) {
   visit('/discoverable-taxonomy-sets/1/role-types/1');
   andThen(() => assert.equal(currentURL(), '/discoverable-taxonomy-sets/1/role-types/1/presentation-nodes'));
 
-  // search-for helper
   fillIn(testSelector('search-input'), "name");
   triggerEvent(testSelector('search-input'), 'keyup');
   click('a:contains("NameThirdPartyAgent")');
@@ -29,8 +28,8 @@ test('search element with dimensions and drill down', function(assert) {
 
   click('[data-test-dimension-nodes] > a');
   andThen(() => {
+    assert.equal(find('[data-test-dimension-nodes] > a:nth(5)').text(), 'ThirdPartyAgentTypeDimension (choice required)');
     assert.equal(find('[data-test-dimension-nodes] > a:first').text(), 'GroupCompanyDimension (has default)');
-    assert.ok(find('[data-test-dimension-nodes] > a').text().includes('ThirdPartyAgentTypeDimension (choice required)'))
   });
 
   click('[data-test-dimension-nodes] > a:contains("ThirdPartyAgentTypeDimension")');
