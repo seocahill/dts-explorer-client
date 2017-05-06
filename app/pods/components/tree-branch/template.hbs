@@ -1,8 +1,0 @@
-<a href="#" {{action "activateNode"}}>{{node.element.name}}</a>
-{{#if showChildren}}
-  <ul>
-    {{#each node.children as |child|}} 
-      {{tree-branch node=child viewElement=attrs.viewElement}} 
-    {{/each}}
-  </ul>
-{{/if}}
