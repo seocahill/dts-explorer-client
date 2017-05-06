@@ -3,7 +3,11 @@ import { test } from 'qunit';
 import moduleForAcceptance from 'dts-explorer/tests/helpers/module-for-acceptance';
 import testSelector from 'ember-test-selectors';
 
-moduleForAcceptance('Acceptance | search NameThirdPartyAgent element and view dimensions');
+moduleForAcceptance('Acceptance | search NameThirdPartyAgent element and view dimensions', {
+  afterEach() {
+    if (server !== undefined) { server.shutdown(); }
+  }
+});
 
 test('search element with dimensions and drill down', function(assert) {
   server.loadFixtures();

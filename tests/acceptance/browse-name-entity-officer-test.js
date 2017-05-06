@@ -4,7 +4,11 @@ import { test } from 'qunit';
 import moduleForAcceptance from 'dts-explorer/tests/helpers/module-for-acceptance';
 import testSelector from 'ember-test-selectors';
 
-moduleForAcceptance('Acceptance | browse name entity officer');
+moduleForAcceptance('Acceptance | browse name entity officer', {
+  afterEach() {
+    if (server !== undefined) { server.shutdown(); }
+  }
+});
 
 test('navigate menu tree to view entity officer element properties and return via parent links', function(assert) {
   server.loadFixtures();
