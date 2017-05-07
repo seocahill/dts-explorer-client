@@ -12,6 +12,14 @@ const stubResults = [
   Ember.Object.create({ name: 'result 2' })
 ];
 
+test('query is blank return emptry results array', function(assert) {
+  this.render(hbs`{{search-bar searchScope=searchScope}}`);
+  this.$('input').trigger('keyup');
+  return wait().then(() => {
+    assert.equal(this.$('a').length, 0, 'no results');
+  });
+});
+
 test('should render results after typing a term', function (assert) {
   assert.expect(2);
 
