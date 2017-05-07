@@ -2,6 +2,8 @@
 
 [![Test Coverage](https://codeclimate.com/github/seocahill/dts-explorer-client/badges/coverage.svg)](https://codeclimate.com/github/seocahill/dts-explorer-client/coverage)
 
+[![Build Status](https://travis-ci.org/seocahill/dts-explorer-client.svg?branch=master)](https://travis-ci.org/seocahill/dts-explorer-client)
+
 # DTS explorer
 
 This is a sample ember application that displays a miller column type interface for viewing a parsed XBRL discoverable taxonomy set.
