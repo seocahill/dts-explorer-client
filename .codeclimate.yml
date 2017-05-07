@@ -19,6 +19,8 @@ exclude_paths:
 - config/
 - dist/
 - node_modules/
+- bower_components/
 - tests/
 - vendor/
 - mirage/
+- coverage/
