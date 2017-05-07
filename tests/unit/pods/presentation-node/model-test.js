@@ -50,7 +50,8 @@ test('descendents', function(assert) {
   Ember.run(() => {
     const parent = this.store().createRecord('presentation-node', { parent: grandParent });
     const child = this.store().createRecord('presentation-node', { parent: parent });
-    this.store().createRecord('presentation-node', { parent: child });
+    const grandChild = this.store().createRecord('presentation-node', { parent: child });
+    assert.equal(grandChild.descendents().length, 0, 'should return 0 if no children');
+    assert.equal(grandParent.descendents().length, 3, 'should recursively find all descendent models');
   })
-  assert.equal(grandParent.descendents().length, 3, 'should recursively find all descendent models');
 });

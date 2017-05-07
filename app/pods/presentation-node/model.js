@@ -13,7 +13,7 @@ export default DS.Model.extend({
   descendents() {
     return this.get('children').reduce((previous, current) => {
       previous.addObject(current);
-      if (current.get('children')) {
+      if (Ember.isPresent(current.get('children'))) {
         previous.addObjects(current.descendents());
       }
       return previous;
