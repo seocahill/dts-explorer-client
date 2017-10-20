@@ -13,7 +13,7 @@ test('search element with dimensions and drill down', function(assert) {
   server.loadFixtures();
   visit('/discoverable-taxonomy-sets/1/role-types/1');
   andThen(() => assert.equal(currentURL(), '/discoverable-taxonomy-sets/1/role-types/1/presentation-nodes'));
-
+  click('a:contains("EntityInformationHeading")');
   fillIn(testSelector('search-input'), "name");
   triggerEvent(testSelector('search-input'), 'keyup');
   click('a:contains("NameThirdPartyAgent")');
@@ -25,12 +25,11 @@ test('search element with dimensions and drill down', function(assert) {
 
   click('[data-test-dimension-nodes] > a');
   andThen(() => assert.equal(find('[data-test-dimension-nodes] > a:first').text(), 'ThirdPartyAgentsHypercube (choice required)'));
-
   click('[data-test-dimension-nodes] > a');
   andThen(() => {
-    assert.equal(find('[data-test-dimension-nodes] > a:nth(5)').text(), 'ThirdPartyAgentTypeDimension (choice required)');
-    assert.equal(find('[data-test-dimension-nodes] > a:first').text(), 'GroupCompanyDimension (has default)');
+    assert.equal(find('[data-test-dimension-nodes] > a:nth(5)').text(), 'tries_CountriesDimension (has default)');
   });
+  
 
   click('[data-test-dimension-nodes] > a:contains("ThirdPartyAgentTypeDimension")');
   click('[data-test-dimension-nodes] > a:contains("DimensionMembersIdentifyingTypeThirdPartyAgentHeading")');
@@ -46,7 +45,6 @@ test('search element with dimensions and drill down', function(assert) {
     assert.equal(find(testSelector('element', 'nillable')).text(), "nillable true");
     assert.equal(find(testSelector('element', 'abstract')).text(), "abstract true");
   });
-
   click('a:contains("close")');
   andThen(() => findWithAssert(testSelector('dimension-nodes')));
 
