@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route';
-import { isBlank } from '@ember/utils';
 
 export default Route.extend({
   model() {
