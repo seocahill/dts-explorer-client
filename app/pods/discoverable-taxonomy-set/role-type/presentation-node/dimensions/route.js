@@ -9,6 +9,6 @@ export default Ember.Route.extend({
 
   setupController(controller, model) {
     this._super(...arguments);
-    controller.set('rootNodes', model.filter((node) => isBlank(node.get('parent.id'))));
+    controller.set('rootNodes', model.filter((node) => node.get('arcrole') === "primary-item"));
   }
 });
