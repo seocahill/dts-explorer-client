@@ -1,5 +1,6 @@
+import { isPresent } from '@ember/utils';
+import { alias } from '@ember/object/computed';
 import DS from 'ember-data';
-import Ember from 'ember';
 
 export default DS.Model.extend({
   element: DS.belongsTo('element'),
@@ -8,12 +9,12 @@ export default DS.Model.extend({
   roleType: DS.belongsTo('role-type'),
   order: DS.attr('number'),
 
-  name: Ember.computed.alias('element.name'),
+  name: alias('element.name'),
 
   descendents() {
     return this.get('children').reduce((previous, current) => {
       previous.addObject(current);
-      if (Ember.isPresent(current.get('children'))) {
+      if (isPresent(current.get('children'))) {
         previous.addObjects(current.descendents());
       }
       return previous;

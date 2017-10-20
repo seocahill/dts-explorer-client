@@ -1,9 +1,8 @@
-import Ember from 'ember';
+import { filter } from '@ember/object/computed';
+import Controller from '@ember/controller';
 
-const { computed } = Ember;
-
-export default Ember.Controller.extend({
-  rootNodes: computed.filter('model.presentationNodes', function(node) {
+export default Controller.extend({
+  rootNodes: filter('model.presentationNodes', function(node) {
     return node.get('parent.id') === undefined; 
   })
 });

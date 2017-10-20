@@ -1,15 +1,15 @@
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import wait from 'ember-test-helpers/wait';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
 
 moduleForComponent('search-bar', 'Integration | Component | search bar', {
   integration: true
 });
 
 const stubResults = [
-  Ember.Object.create({ name: 'result 1' }),
-  Ember.Object.create({ name: 'result 2' })
+  EmberObject.create({ name: 'result 1' }),
+  EmberObject.create({ name: 'result 2' })
 ];
 
 test('query is blank return emptry results array', function(assert) {

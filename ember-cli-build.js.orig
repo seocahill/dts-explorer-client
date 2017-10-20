@@ -1,7 +1,11 @@
 /* eslint-env node */
+<<<<<<< HEAD
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+=======
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+>>>>>>> 1bd2717... diff
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {

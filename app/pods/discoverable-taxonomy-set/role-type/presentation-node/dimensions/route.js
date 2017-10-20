@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { isBlank } from '@ember/utils';
 
-const { isBlank } = Ember;
-
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return this.modelFor('discoverable-taxonomy-set.role-type.presentation-node').get('element.dimensionNodes');
   },

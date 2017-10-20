@@ -2,10 +2,16 @@
 'use strict';
 
 module.exports = function(environment) {
+<<<<<<< HEAD
   var ENV = {
     modulePrefix: 'dts-explorer',
     podModulePrefix: 'dts-explorer/pods',
     environment: environment,
+=======
+  let ENV = {
+    modulePrefix: 'my-app',
+    environment,
+>>>>>>> 1bd2717... diff
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

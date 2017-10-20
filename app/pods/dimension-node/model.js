@@ -1,5 +1,6 @@
+import { isPresent } from '@ember/utils';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
-import Ember from 'ember';
 
 export default DS.Model.extend({
   element: DS.belongsTo('element'),
@@ -12,15 +13,15 @@ export default DS.Model.extend({
 
   // name: Ember.computed.alias('element.name'),
 
-  dimensionType: Ember.computed('defaultDimension', function() {
+  dimensionType: computed('defaultDimension', function() {
     return this.get('defaultDimension') ?  " (has default)" : " (choice required)";
   }),
 
-  shortArcrole: Ember.computed('arcrole', function() {
+  shortArcrole: computed('arcrole', function() {
     return this.get('arcrole').split('/').get('lastObject');
   }),
 
-  defaultDimension: Ember.computed(function() {
+  defaultDimension: computed(function() {
     const arcrole = this.get('shortArcrole');
     if (arcrole === 'all') {
       return this.get('children').every((child) => child._defaultDimension());
@@ -35,7 +36,7 @@ export default DS.Model.extend({
     if (this.get('shortArcrole') === "dimension-default") {
       return true;
     }
-    if (Ember.isPresent(this.get('children'))) {
+    if (isPresent(this.get('children'))) {
       return this.get('children').any((child) => child._defaultDimension());
     }
     return false;

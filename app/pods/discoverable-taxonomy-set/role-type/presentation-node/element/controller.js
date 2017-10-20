@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { filter } from '@ember/object/computed';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   dimensionElement: null,
 
-  rootDimensionNodes: Ember.computed.filter('model.dimensionNodes.[]', function(node) {
+  rootDimensionNodes: filter('model.dimensionNodes.[]', function(node) {
     return node.get('parent.id') === undefined;
   })
 });

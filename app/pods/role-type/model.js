@@ -1,5 +1,5 @@
+import { alias } from '@ember/object/computed';
 import DS from 'ember-data';
-import Ember from 'ember';
 
 export default DS.Model.extend({
   discoverableTaxonomySet: DS.belongsTo('discoverable-taxonomy-set'),
@@ -8,5 +8,5 @@ export default DS.Model.extend({
   
   definition: DS.attr('string'),
 
-  name: Ember.computed.alias('definition')
+  name: alias('definition')
 });

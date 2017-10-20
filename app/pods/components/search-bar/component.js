@@ -1,6 +1,9 @@
-import Ember from 'ember';
+import { debounce } from '@ember/runloop';
+import { isBlank } from '@ember/utils';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   query: null,
   results: [],
 
@@ -9,7 +12,7 @@ export default Ember.Component.extend({
     this.set('query', null);
   },
 
-  searchPath: Ember.computed('searchScope.[]', function() {
+  searchPath: computed('searchScope.[]', function() {
     const modelName = this.get('searchScope.firstObject.constructor.modelName');
     if (modelName === 'role-type') {
       return 'discoverable-taxonomy-set.role-type'
@@ -22,7 +25,7 @@ export default Ember.Component.extend({
 
   _filterModel() {
     const query = this.get('query');
-    if (Ember.isBlank(query)) {
+    if (isBlank(query)) {
       return;
     }
     const results = this.get('searchScope').filter((item) => {
@@ -33,7 +36,7 @@ export default Ember.Component.extend({
 
   actions: {
     filterModel() {
-      Ember.run.debounce(this, this._filterModel, 500)
+      debounce(this, this._filterModel, 500)
     },
 
     handleClick(model) {
