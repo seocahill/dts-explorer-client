@@ -27,12 +27,16 @@ COPY package.json .
 RUN \
   npm install -g \
   ember-cli@2.16.2 && \
-  apk --update add inotify-tools && \
+  apk --update --no-cache add \
+  chromium \
+  inotify-tools \
+  ttf-freefont \
+  udev && \
   mkdir -p /usr/local/var/run/watchman
 
 COPY . .
 
-EXPOSE 4200 7020
+EXPOSE 4200 7020 7357 9222
 
 ENV PATH /usr/local/bin:$PATH
 
