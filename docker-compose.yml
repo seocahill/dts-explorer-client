@@ -1,0 +1,15 @@
+version: "3.3"
+
+services: 
+  ember: 
+    build: .
+    image: seocahill/dts-explorer-client:0.0.1
+    volumes:
+      - .:/src
+      - node_modules:/src/node_modules
+    ports:
+      - "4200:4200"
+      - "7020:7020"
+
+volumes:
+  node_modules:
