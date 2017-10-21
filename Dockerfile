@@ -27,7 +27,7 @@ COPY package.json .
 RUN \
   npm install -g \
   ember-cli@2.16.2 && \
-  npm install && \
+  apk --update add inotify-tools && \
   mkdir -p /usr/local/var/run/watchman
 
 COPY . .
