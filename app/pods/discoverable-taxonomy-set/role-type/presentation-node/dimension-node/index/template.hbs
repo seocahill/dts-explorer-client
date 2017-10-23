@@ -1,12 +1,12 @@
-<nav data-test-dimension-nodes class="list-group">
+<ul data-test-dimension-nodes class="list-group">
   {{#if model.parent}}
      {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' model.parent class="list-group-item"}}<i class="material-icons">arrow_back</i>{{/link-to}}
   {{/if}}
   {{#each model.children as |child|}} 
     {{link-to (concat (humanize (dasherize child.name)) child.dimensionType) 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' child class="list-group-item"}}
   {{else}}
-    {{#each-in model.data as |key value|}}
+    {{#each-in model.element.data as |key value|}}
       <li class="list-group-item" data-test-element="{{key}}"><strong>{{key}}</strong>: <em>{{value}}</em></li>
     {{/each-in}}
   {{/each}}
-</nav>
+</ul>
