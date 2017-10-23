@@ -1,6 +1,5 @@
-<h4>Dimensions {{link-to 'close' 'discoverable-taxonomy-set.role-type.presentation-node'}}</h4>
-<nav data-test-dimension-nodes>
+<ul class="list-group" data-test-dimension-nodes>
   {{#each rootNodes as |node|}} 
-    {{link-to node.element.name 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' node.id}}
+    {{link-to node.element.name 'discoverable-taxonomy-set.role-type.presentation-node.dimension-node' node.id class="list-group-item"}} 
   {{/each}}
-</nav>
+</ul>
