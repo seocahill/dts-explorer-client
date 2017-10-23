@@ -5,87 +5,87 @@ export default [
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/cd/role/Business-Report-Information",
+    "id": "1",
     "definition": "02 - Business Report Information",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/DirectorsReport",
+    "id": "1",
     "definition": "05 - Directors' Report",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/AuditorsReport",
+    "id": "1",
     "definition": "06 - Auditor's Report",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/ProftAndLossAccount",
+    "id": "1",
     "definition": "10 - Profit and Loss Account",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/org/role/BalanceSheetStatement",
+    "id": "1",
     "definition": "11 - Balance Sheet",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/CashFlowStatement",
+    "id": "1",
     "definition": "12 - Cash Flow Statement",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/STRGL",
+    "id": "1",
     "definition": "13 - Statement of Total Recognised Gains and Losses",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/NoteHistoricalCostProfits",
+    "id": "1",
     "definition": "14 - Note of Historical Cost Profits and Losses",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/ReconciliationMovementsShareholderFunds",
+    "id": "1",
     "definition": "15 - Reconciliation of Movements in Shareholder Funds",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/Notes",
+    "id": "1",
     "definition": "20 - Notes and Detailed Disclosures",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/role/DetailedProfitLoss",
+    "id": "1",
     "definition": "30 - Detailed Profit and Loss",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/all/role/CountriesAndRegions",
+    "id": "1",
     "definition": "94 - Countries and Regions",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/all/role/StockExchanges",
+    "id": "1",
     "definition": "95 - Stock Exchanges",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/all/role/Currencies",
+    "id": "1",
     "definition": "96 - Currencies",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/all/role/Languages",
+    "id": "1",
     "definition": "97 - Languages",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/cd/role/General-Purpose-Contact-Information",
+    "id": "1",
     "definition": "98 - General Purpose Contact Information",
     "discoverableTaxonomySetId": "1"
   },
   {
-    "id": "http://www.xbrl.org/uk/cd/role/XBRL-Document-Information",
+    "id": "1",
     "definition": "99 - XBRL Document Information",
     "discoverableTaxonomySetId": "1"
   }
