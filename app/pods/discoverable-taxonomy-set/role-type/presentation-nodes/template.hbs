@@ -1,5 +1,10 @@
-<nav>
+<nav class="list-group">
+  {{#link-to 'discoverable-taxonomy-set' class="list-group-item list-group-item-action flex-column align-items-start"}}
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><i class="material-icons">arrow_upward</i> {{model.firstObject.roleType.definition}}</h5>
+    </div>
+  {{/link-to}}
   {{#each rootNodes as |node|}}
-    {{link-to node.element.name 'discoverable-taxonomy-set.role-type.presentation-node' node.id}}
+    {{link-to (humanize (dasherize node.element.name)) 'discoverable-taxonomy-set.role-type.presentation-node' node.id class="list-group-item"}}
   {{/each}}
 </nav>

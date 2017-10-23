@@ -7,5 +7,8 @@ export default Route.extend({
 
   afterModel(model) {
     this.controllerFor('application').set('searchScope', model.descendents());
+    if (model.get('children.length') === 0) {
+      this.replaceWith('discoverable-taxonomy-set.role-type.presentation-node.element', model.get('element'));
+    }
   }
 });

@@ -1,5 +1,10 @@
-<ul data-test-role-types-menu>
-  {{#each model.roleTypes as |roleType|}}
-    <li>{{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id}}</li>
+<ul class="list-group" data-test-role-types-menu>
+   {{#link-to 'discoverable-taxonomy-set' class="list-group-item list-group-item-action flex-column align-items-start"}}
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{model.name}}</h5>
+    </div>
+  {{/link-to}}
+  {{#each model.sortedRoleTypes as |roleType|}}
+    <li class="list-group-item">{{link-to roleType.definition 'discoverable-taxonomy-set.role-type' roleType.id}}</li>
   {{/each}}
 </ul>

@@ -1,13 +1,30 @@
-<header>
-  <h1>{{link-to "XBRL DTS Explorer" 'application'}}</h1>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+   {{#link-to 'application' class="navbar-brand mb-0 h1"}}<i class="material-icons md-48">home</i>{{/link-to}}
+  <form class="form-inline">
+     {{search-bar searchScope=searchScope data-test-search-bar=true search=(action (mut searchResults))}}
+  </form>
+</nav>
 
-{{search-bar searchScope=searchScope data-test-search-bar=true navigateToResult=(action "navigateToResult")}}
-
-<main>
-  {{outlet}}
+<main class="container mt-4">
+  {{#if searchResults}}
+    <ul class="list-group">
+      <div class="list-group-item flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Search results</h5>
+          <a href="">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+      </div>
+      {{#each searchResults as |result|}}
+        <a class="list-group-item" {{action "navigateToResult" result}} href="#">{{result.name}}</a>
+      {{/each}}
+    </ul>
+  {{else}} 
+    {{outlet}}
+  {{/if}}
 </main>
 
-<footer>
-  <p>Seo Cahill 2017.</p>
+<footer class="footer mt-2">
+  <p class="text-center">XBRL DTS Explorer demo Seo Cahill 2017.</p>
 </footer>

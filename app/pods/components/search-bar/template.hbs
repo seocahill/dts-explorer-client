@@ -1,6 +1,3 @@
 <form>
-  {{input value=query type="search" key-up=(action 'filterModel') placeholder="search taxonomy" data-test-search-input=true}}
+  {{input value=query type="search" class="form-control mr-sm-2" key-up=(action 'filterModel') placeholder="Search" data-test-search-input=true}}
 </form>
-{{#each results as |result|}}
-  <a href="#" {{action "handleClick" result}}>{{result.name}}</a><br>
-{{/each}}

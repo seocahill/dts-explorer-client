@@ -1,11 +1,10 @@
 import { debounce } from '@ember/runloop';
-import { isBlank } from '@ember/utils';
+import { isPresent } from '@ember/utils';
 import { computed } from '@ember/object';
 import Component from '@ember/component';
 
 export default Component.extend({
   query: null,
-  results: [],
 
   didReceiveAttrs() {
     this._super(...arguments);
@@ -25,23 +24,18 @@ export default Component.extend({
 
   _filterModel() {
     const query = this.get('query');
-    if (isBlank(query)) {
-      return;
+    let results = [];
+    if (isPresent(query)) {
+      results = this.get('searchScope').filter((item) => {
+        return item.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
+      });
     }
-    const results = this.get('searchScope').filter((item) => {
-      return item.get('name').toLowerCase().search(query.toLowerCase()) !== -1;
-    });
-    this.set('results', results);
+    this.get('search')(results);
   },
 
   actions: {
     filterModel() {
       debounce(this, this._filterModel, 500)
-    },
-
-    handleClick(model) {
-      this.get('navigateToResult')(this.get('searchPath'), model);
-      this.setProperties({results: [], query: null});
     }
   }
 });

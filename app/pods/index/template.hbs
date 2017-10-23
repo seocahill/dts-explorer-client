@@ -1,6 +1,10 @@
-<h2>Discoverable Taxonomy Sets</h2>
-<ul data-test-dts-menu>
+<ul class="list-group" data-test-dts-menu>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Discoverable Taxonomy Sets</h5>
+    </div>
+  </a>
   {{#each model as |dts|}}
-    <li>{{link-to dts.name 'discoverable-taxonomy-set' dts.id}}</li>
+    <li class="list-group-item">{{link-to dts.name 'discoverable-taxonomy-set' dts.id}}</li>
   {{/each}}
 </ul>

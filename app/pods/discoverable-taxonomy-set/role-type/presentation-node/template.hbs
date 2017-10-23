@@ -1,8 +1,10 @@
-{{link-to model.element.name 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true}} | 
-{{#if model.parent}}
-  {{link-to "parent" 'discoverable-taxonomy-set.role-type.presentation-node' model.parent}}
-{{else}}
-  {{link-to "parent" 'discoverable-taxonomy-set.role-type'}}
-{{/if}}
-| {{link-to "dimensions" 'discoverable-taxonomy-set.role-type.presentation-node.dimensions'}}
+<nav class="nav nav-pills nav-justified mb-2">
+  {{#if model.parent}}
+    {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node' model.parent class="nav-item nav-link"}}<i class="material-icons md-48">arrow_upward</i>{{/link-to}}
+  {{else}}
+    {{#link-to 'discoverable-taxonomy-set.role-type' class="nav-item nav-link"}}<i class="material-icons md-48">arrow_upward</i>{{/link-to}}
+  {{/if}}
+  {{#link-to 'discoverable-taxonomy-set.role-type.presentation-node.element' model.element.id data-test-element-properties=true class="nav-item nav-link"}}<i class="material-icons">details</i>{{/link-to}}
+  {{link-to "Dimensions" 'discoverable-taxonomy-set.role-type.presentation-node.dimensions' class="nav-item nav-link"}}
+</nav>
 {{outlet}}

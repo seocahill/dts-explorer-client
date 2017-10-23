@@ -1,4 +1,5 @@
 import { alias } from '@ember/object/computed';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -8,5 +9,12 @@ export default DS.Model.extend({
   
   definition: DS.attr('string'),
 
-  name: alias('definition')
+  name: alias('definition'),
+
+  number: computed('definition', function() {
+    if (! this.get('definition')) {
+      return;
+    }
+    return this.get('definition').match(/\d+/g).map(Number);
+  })
 });
