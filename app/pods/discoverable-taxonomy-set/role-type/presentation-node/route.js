@@ -2,7 +2,9 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model(params) {
-    return this.get('store').findRecord('presentation-node', params.presentation_node_id)
+    return this.get('store').findRecord('presentation-node', params.presentation_node_id, {
+      include: 'children'
+    });
   },
 
   afterModel(model) {
